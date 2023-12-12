@@ -1,0 +1,121 @@
+-- -- nvim-cmp setup
+-- local cmp_status_ok, cmp = pcall(require, "cmp")
+-- if not cmp_status_ok then
+--   print("Failed to load cmp")
+--   return
+-- end
+--
+-- local luasnip_status_ok, luasnip = pcall(require, "luasnip")
+-- if not luasnip_status_ok then
+--   print("Failed to load luasnip")
+--   return
+-- end
+--
+-- -- https://github.com/Alexis12119/nvim-config/blob/master/lua/user/plugins/cmp.lua
+-- local kind_icons = {
+--   Text = "",
+--   Method = "",
+--   Function = "",
+--   Constructor = "",
+--   Field = "ﰠ",
+--   Variable = "",
+--   Class = "ﴯ",
+--   Interface = "",
+--   Module = "",
+--   Property = "ﰠ",
+--   Unit = "塞",
+--   Value = "",
+--   Enum = "",
+--   Keyword = "",
+--   Snippet = "",
+--   Color = "",
+--   File = "",
+--   Reference = "",
+--   Folder = "",
+--   EnumMember = "",
+--   Constant = "",
+--   Struct = "פּ",
+--   Event = "",
+--   Operator = "",
+--   TypeParameter = "",
+-- }
+--
+-- cmp.setup {
+--   snippet = {
+--     expand = function(args)
+--       luasnip.lsp_expand(args.body)
+--     end,
+--   },
+--   window = {
+--     completion = cmp.config.window.bordered {
+--       border = "rounded",
+--       -- winhighlight = "Normal:Normal,FloatBorder:CmpCompletionBorder,CursorLine:CmpCursorLine,Search:Search",
+--       col_offset = -3,
+--       side_padding = 1,
+--     },
+--     documentation = cmp.config.window.bordered {
+--       border = "rounded",
+--       -- winhighlight = "Normal:Normal,FloatBorder:CmpDocumentationBorder,CursorLine:CmpCursorLine,Search:Search",
+--       col_offset = -3,
+--       side_padding = 1,
+--     },
+--   },
+--   confirm_opts = {
+--     behavior = cmp.ConfirmBehavior.Replace,
+--     select = false,
+--   },
+--   formatting = {
+--     format = function(_, vim_item)
+--       vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
+--       return vim_item
+--     end,
+--   },
+--   mapping = cmp.mapping.preset.insert {
+--     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+--     ["<C-f>"] = cmp.mapping.scroll_docs(4),
+--     ["<C-Space>"] = cmp.mapping.complete(),
+--     ["<CR>"] = cmp.mapping.confirm {
+--       behavior = cmp.ConfirmBehavior.Replace,
+--       select = true,
+--     },
+--     ["<Tab>"] = cmp.mapping(function(fallback)
+--       if cmp.visible() then
+--         cmp.select_next_item()
+--       elseif luasnip.expand_or_jumpable() then
+--         luasnip.expand_or_jump()
+--       else
+--         fallback()
+--       end
+--     end, { "i", "s" }),
+--     ["<S-Tab>"] = cmp.mapping(function(fallback)
+--       if cmp.visible() then
+--         cmp.select_prev_item()
+--       elseif luasnip.jumpable(-1) then
+--         luasnip.jump(-1)
+--       else
+--         fallback()
+--       end
+--     end, { "i", "s" }),
+--   },
+--   sources = {
+--     { name = "nvim_lsp" },
+--     { name = "luasnip" },
+--   },
+--
+--   -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+--   cmdline = { '/', '?' }, {
+--     mapping = cmp.mapping.preset.cmdline(),
+--     sources = cmp.config.sources({
+--       { name = "nvim_lsp_document_symbol" },
+--     }, {
+--       { name = 'buffer' }
+--     })
+--   }
+-- }
+--
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+-- capabilities.textDocument.foldinRange = {
+--   dynamicRegistration = false,
+--   lineFoldingOnly = true
+-- }
