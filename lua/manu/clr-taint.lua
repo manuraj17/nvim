@@ -1,0 +1,138 @@
+-- local colors = {
+--   bg = "#2b303b",
+--   bg_alt = "#232830",
+--   base0 = "#1B2229",
+--   base1 = "#1c1f24",
+--   base2 = "#202328",
+--   base3 = "#2F3237",
+--   base4 = "#4f5b66",
+--   base5 = "#65737E",
+--   base6 = "#73797e",
+--   base7 = "#9ca0a4",
+--   base8 = "#DFDFDF",
+--   fg = "#c0c5ce",
+--   fg_alt = "#c0c5ce",
+--   grey = "#4f5b66",
+--   red = "#BF616A",
+--   orange = "#D08770",
+--   green = "#A3BE8C",
+--   blue = "#8FA1B3",
+--   violet = "#b48ead",
+--   teal = "#fff",
+--   -- teal = "#4db5bd",
+--   yellow = "#ECBE7B",
+--   dark_blue = "#2257A0",
+--   magenta = "#B58DAE",
+--   cyan = "#6BAF92",
+--   dark_cyan = "#417B85",
+-- }
+--
+-- local function set_highlight(group, color)
+--   local style = color.style and "gui=" .. color.style or "gui=NONE"
+--   local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
+--   local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"
+--   vim.cmd(string.format("highlight %s %s %s %s", group, style, fg, bg))
+-- end
+--
+-- local function setup_highlights()
+--   set_highlight('Comment', { fg = colors.grey })
+--   set_highlight('Identifier', { fg = colors.orange })
+--   set_highlight('Title', { fg = colors.blue, style = 'bold' })
+--   set_highlight('Underlined', { fg = colors.dark_blue, style = 'underline' })
+--   set_highlight('Todo', { fg = colors.yellow, style = 'bold' })
+--   set_highlight('Delimiter', { fg = colors.base6 })
+--   set_highlight('Constant', { fg = colors.violet })
+--   set_highlight('Special', { fg = colors.magenta })
+--   set_highlight('Define', { fg = colors.orange })
+--   set_highlight('Macro', { fg = colors.red })
+--   set_highlight('String', { fg = colors.green })
+--   set_highlight('SpecialChar', { fg = colors.orange })
+--   set_highlight('Character', { fg = colors.red })
+--   set_highlight('Number', { fg = colors.orange })
+--   set_highlight('Boolean', { fg = colors.red })
+--   set_highlight('Float', { fg = colors.orange })
+--   set_highlight('Function', { fg = colors.blue })
+--   set_highlight('Conditional', { fg = colors.purple })
+--   set_highlight('Repeat', { fg = colors.purple })
+--   set_highlight('Label', { fg = colors.blue })
+--   set_highlight('Operator', { fg = colors.base5 })
+--   set_highlight('Keyword', { fg = colors.cyan })
+--   set_highlight('Exception', { fg = colors.red })
+--   set_highlight('Type', { fg = colors.teal })
+--   set_highlight('Typedef', { fg = colors.teal })
+--   set_highlight('StorageClass', { fg = colors.teal })
+--   set_highlight('Structure', { fg = colors.teal })
+--   set_highlight('Include', { fg = colors.orange })
+--   set_highlight('PreProc', { fg = colors.orange })
+--   set_highlight('Debug', { fg = colors.red })
+--   set_highlight('Tag', { fg = colors.blue })
+--   -- Add more highlight groups as needed
+-- end
+--
+-- setup_highlights()
+--
+-- local function hl(group, color)
+--   vim.api.nvim_set_hl(0, group, color)
+-- end
+--
+-- hl("Normal", { fg = colors.fg, bg = colors.bg })
+-- hl("SignColumn", { bg = colors.bg })
+-- hl("MsgArea", { fg = colors.fg, bg = colors.bg })
+-- hl("ModeMsg", { fg = colors.fg, bg = colors.bg_alt })
+-- hl("MsgSeparator", { fg = colors.fg, bg = colors.bg })
+-- hl("SpellBad", { sp = colors.red, undercurl = true })
+-- hl("SpellCap", { sp = colors.yellow, undercurl = true })
+-- hl("SpellLocal", { sp = colors.green, underline = true })
+-- hl("SpellRare", { sp = colors.purple, underline = true })
+-- hl("NormalNC", { fg = colors.fg, bg = colors.bg })
+-- hl("Pmenu", { fg = colors.light_gray, bg = colors.alt_bg })
+-- hl("PmenuSel", { bg = colors.ui_search })
+-- hl("WildMenu", { fg = colors.fg, bg = colors.ui2_blue })
+-- hl("CursorLineNr", { fg = colors.light_gray, bold = true })
+-- hl("Folded", { fg = colors.ui4_blue, bg = colors.alt_bg })
+-- hl("FoldColumn", { fg = colors.gray, bg = colors.alt_bg })
+-- hl("LineNr", { fg = colors.gray })
+-- hl("FloatBorder", { fg = colors.gray, bg = colors.bg })
+-- hl("Whitespace", { fg = colors.bg })
+-- hl("VertSplit", { fg = colors.gray, bg = colors.bg })
+-- hl("CursorLine", { bg = colors.line })
+-- hl("CursorColumn", { bg = colors.alt_bg })
+-- hl("ColorColumn", { bg = colors.line })
+-- hl("NormalFloat", { bg = colors.alt_bg })
+-- hl("Visual", { bg = colors.ui_search })
+-- hl("VisualNOS", { bg = colors.alt_bg })
+-- hl("WarningMsg", { fg = colors.warn, bg = colors.bg })
+-- hl("DiffText", { fg = colors.alt_bg, bg = colors.sign_delete })
+-- hl("DiffAdd", { fg = colors.alt_bg, bg = colors.sign_add })
+-- hl("DiffChange", { fg = colors.alt_bg, bg = colors.sign_change, underline = true })
+-- hl("DiffDelete", { fg = colors.alt_bg, bg = colors.sign_delete })
+-- hl("QuickFixLine", { bg = colors.ui2_blue })
+-- hl("PmenuSbar", { bg = colors.alt_bg })
+-- hl("PmenuThumb", { bg = colors.gray })
+-- hl("MatchWord", { bg = colors.reference })
+-- hl("MatchParen", { fg = colors.hint, bg = colors.reference })
+-- hl("MatchWordCur", { bg = colors.reference })
+-- hl("MatchParenCur", { bg = colors.reference })
+-- hl("IlluminatedWordText", { bg = colors.reference })
+-- hl("IlluminatedWordRead", { bg = colors.reference })
+-- hl("IlluminatedWordWrite", { bg = colors.reference })
+-- hl("Cursor", { fg = colors.cursor_fg, bg = colors.cursor_bg })
+-- hl("lCursor", { fg = colors.cursor_fg, bg = colors.cursor_bg })
+-- hl("CursorIM", { fg = colors.cursor_fg, bg = colors.cursor_bg })
+-- hl("TermCursor", { fg = colors.cursor_fg, bg = colors.cursor_bg })
+-- hl("TermCursorNC", { fg = colors.cursor_fg, bg = colors.cursor_bg })
+-- hl("Conceal", { fg = colors.gray })
+-- hl("Directory", { fg = colors.folder_blue })
+-- hl("SpecialKey", { fg = colors.blue, bold = true })
+-- hl("ErrorMsg", { fg = colors.error, bg = colors.bg, bold = true })
+-- hl("Search", { fg = colors.yellow, bg = colors.ui_search })
+-- hl("IncSearch", { fg = colors.yellow, bg = colors.ui_search })
+-- hl("CurSearch", { fg = colors.yellow, bg = colors.ui_search })
+-- hl("Substitute", { bg = colors.ui2_orange })
+-- hl("MoreMsg", { fg = colors.orange })
+-- hl("Question", { fg = colors.orange })
+-- hl("EndOfBuffer", { fg = colors.bg })
+-- hl("NonText", { fg = colors.bg })
+-- hl("TabLine", { fg = colors.gray, bg = colors.line })
+-- hl("TabLineSel", { fg = colors.light_gray, bg = colors.line })
+-- hl("TabLineFill", { bg = colors.line })
