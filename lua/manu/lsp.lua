@@ -193,6 +193,5 @@ cmp.setup({
     native_menu = false,
     ghost_text = true,
   },
-
 })
 

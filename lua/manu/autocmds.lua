@@ -40,11 +40,37 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
--- highlight yanked text for 200ms using the "Visual" highlight group
-vim.cmd [[
-  augroup highlight_yank
-  autocmd!
-  au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=200})
-  augroup END
-]]
 
+-- Turn of tabs for golang
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "go" },
+  callback = function()
+    vim.cmd("set nolist")
+  end
+})
+-- highlight yanked text for 200ms using the "Visual" highlight group
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
+  pattern = "*",
+  desc = "Highlight selection on yank",
+  callback = function()
+    vim.highlight.on_yank({ timeout = 200, visual = true })
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  group = vim.api.nvim_create_augroup("edit_text", { clear = true }),
+  pattern = { "gitcommit", "markdown", "txt" },
+  desc = "Enable spell checking and text wrapping for certain filetypes",
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.spell = true
+  end,
+})
+
+vim.api.nvim_create_autocmd("VimResized", {
+  group = vim.api.nvim_create_augroup("WinResize", { clear = true }),
+  pattern = "*",
+  command = "wincmd =",
+  desc = "Auto-resize windows on terminal buffer resize.",
+})

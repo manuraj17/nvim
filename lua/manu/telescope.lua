@@ -27,3 +27,4 @@ ts.setup {
 }
 
 ts.load_extension 'notify'
+ts.load_extension 'projects'

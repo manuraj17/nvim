@@ -20,8 +20,10 @@ require("nvim-treesitter.configs").setup {
   auto_install = true,
   ensure_installed = {},
   sync_install = false,
+  ignore_install = { "" },
   highlight = {
     enable = true,
+    disable = { "rust" },
   },
   endwise = {
     enable = true,

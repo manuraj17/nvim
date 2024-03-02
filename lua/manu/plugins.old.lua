@@ -15,6 +15,7 @@ return {
     version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
     dependencies = { "rafamadriz/friendly-snippets" },
   },
+  { 'RaafatTurki/corn.nvim' },
   --#endregion
 
   --#region Highlight, edit, and navigate code
@@ -83,7 +84,22 @@ return {
   { "nyoom-engineering/oxocarbon.nvim" },
   { "sainnhe/everforest" },
   { "frenzyexists/aquarium-vim" },
-  { "AlexvZyl/nordic.nvim" },
+  {
+    "AlexvZyl/nordic.nvim",
+    config = function()
+      require("nordic").setup({
+        theme = "nordic",
+        -- https://github.com/AlexvZyl/nordic.nvim/issues/49
+        override = {
+          Visual = {
+            bg = "#3A515D", -- Choose a color you like.,
+            -- bg = "#BF616A", -- Choose a color you like.,
+            bold = false,   -- Or false.,
+          },
+        },
+      })
+    end
+  },
   { "rebelot/kanagawa.nvim" },
   { "shaunsingh/seoul256.nvim" },
   { "Th3Whit3Wolf/space-nvim" },
@@ -142,7 +158,7 @@ return {
     },
     config = true,
   },
-  -- { "yorickpeterse/nvim-grey" },
+  { "yorickpeterse/nvim-grey" },
   -- Install without configuration
   -- Or with configuration
   {
@@ -157,6 +173,23 @@ return {
       -- vim.cmd('colorscheme github_light_tritanopia')
     end,
   },
+  {
+    "gbprod/nord.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("nord").setup({})
+    end,
+  },
+  install = {
+    colorscheme = { "nord" },
+  },
+  {
+    "HoNamDuong/hybrid.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   --#endregion
 
   --#region Statusline
@@ -168,6 +201,7 @@ return {
   -- },
   {
     "nvim-lualine/lualine.nvim",
+    lazy = false,
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   },
   {
@@ -279,23 +313,23 @@ return {
   --#endregion
 
   --#region UI Spice
-  -- {
-  --   "folke/noice.nvim",
-  --   event = "VeryLazy",
-  --   opts = {
-  --     -- add any options here
-  --   },
-  --   dependencies = {
-  --     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-  --     "MunifTanjim/nui.nvim",
-  --     -- OPTIONAL:
-  --     --   `nvim-notify` is only needed, if you want to use the notification view.
-  --     --   If not available, we use `mini` as the fallback
-  --     "rcarriga/nvim-notify",
-  --   }
-  -- }
-{ "rcarriga/nvim-notify"} ,
-{
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    }
+  },
+  { "rcarriga/nvim-notify" },
+  {
     "j-hui/fidget.nvim",
     opts = {
       -- options
@@ -365,7 +399,7 @@ return {
     "nvim-lualine/lualine.nvim",
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   },
-  { 'akinsho/bufferline.nvim',            version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
+  { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
   {
     'lukas-reineke/headlines.nvim',
     config = function()
@@ -385,4 +419,12 @@ return {
       --
     },
   },
+
+  --#region Markdown Preview
+  { "ellisonleao/glow.nvim",   config = true, cmd = "Glow" },
+  --#endregion
+
+  --#region Projects
+  { "ahmedkhalf/project.nvim" }
+  --#endregion
 }
