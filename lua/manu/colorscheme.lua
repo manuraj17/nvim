@@ -18,6 +18,7 @@
 -- apply(1)
 -- vim.cmd("colorscheme " .. themes[id])
 
+vim.cmd [[ colorscheme habamax]]
 -- vim.cmd [[ colorscheme nordfox]]
 -- vim.cmd [[ colorscheme grey]]
 -- vim.cmd [[ colorscheme doom-one]]
