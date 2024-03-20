@@ -48,3 +48,7 @@ vim.keymap.set(
 
 -- Oil
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- To shadow realm
+vim.keymap.set({"n", "x"}, "d", '"_d')
+vim.keymap.set({"n", "x"}, "dd", '"_dd')
