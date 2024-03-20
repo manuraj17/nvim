@@ -94,8 +94,8 @@ vim.opt.timeoutlen = 1000
 vim.opt.ttimeoutlen = 0
 vim.opt.scrolloff = 8
 
-vim.opt.background = "dark"
--- vim.opt.background = "light"
+-- vim.opt.background = "dark"
+vim.opt.background = "light"
 
 -- For better searching 
 vim.opt.smartcase = true

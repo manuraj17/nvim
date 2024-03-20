@@ -1,5 +1,6 @@
 return {
   require("manu.plugins.comment"),
+  require("manu.plugins.colorschemes"),
   require("manu.plugins.completion_autopair"),
   -- require("manu.plugins.dressing"),
   -- require("manu.plugins.fidget"),
